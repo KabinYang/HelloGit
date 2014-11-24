@@ -1,0 +1,133 @@
+<html>
+	<head>
+		
+	</head>
+	<body\>
+		
+	</body\>
+</html>
+
+
+<script>	
+// Q1
+document.write('<p> Helloworld<p/> '); 
+// var i = 'hello world';
+	// console.log(a);
+
+// Q2 
+document.write('Q1: 1+2+3+...+100=?<br> ');																 
+var sum = 0 , i;
+for (i = 1; i <= 100; i = i+1){ 																		// for (i = 1; i <= 100; i += 1) //用i++為什麼都當機?
+	sum = sum + i 																						// sum += i
+}
+document.write('Ans: ' + sum + '.<br>');
+
+// Q3
+document.write('Q3: Please use if/else to identify odd and even numbers.<br> ');
+var i = prompt('Please type an integer number.');
+if(i / 2 == 0){																							//為什麼=不行呢
+	document.write('It is an even number.<br>');
+}
+else{
+	document.write('It is an odd number.<br>');
+}
+	
+
+// Q4
+document.write('Q4: To calculate BMI.<br>');
+var i = prompt('Please type your height in meters.');    												 //其實可以讓大家直覺地輸入身高我們再幫除一百就好QAQ
+var j = prompt('Please type your weight in kilograms.');
+var BMI = j / (i*i) ;																					// var c = b / (a ^= 2) 會算出其他值QAQ → 平方怎麼表示?可以X^2嘛?
+document.write("Your BMI = " + BMI +".<br>");
+if( BMI <= 18){
+	document.write('You are too thin!');
+}
+else if( 18 < BMI < 22 ){
+	document.write('Congratulations! Your are at a healthy weight!');
+}
+else if( 22 < BMI < 25 ){
+	document.write('Be careful, you are a little bit overweight.');
+}
+else if( 25 < BMI ){
+	document.write('Oh no, you are obese!');
+}																										//嗚嗚只有BMI算對句子沒正確出來大家豪健康啊QWQ
+
+// Q4 - 以下正解，http://jsbin.com/pudufuxuvu/1/edit
+vdocument.write('Q4: To calculate BMI.<br>');
+var height = prompt('Please type your height in meters.');
+var weight = prompt('Please type your weight in kilograms.');
+var BMI = weight/((height/100)*(height/100));
+console.log('The height is '+height+' and weight is '+weight);
+var evalauted = function(BMI){
+  var test =1;
+  if(BMI<18)
+     test = 0;
+  if(BMI>22)
+    test = 2;
+switch(test) {
+    case 0:
+        console.log('Your BMI is '+BMI+' and it is too thin');
+        break;
+    case 1:
+                console.log('Your BMI is '+BMI+' and it is OK');
+        break;
+    case 2:
+                console.log('Your BMI is '+BMI+' and it is too heavy');
+        break;
+    default:
+        console.log('Error');
+        break;
+	}
+};
+evalauted(BMI);																							//這行是?
+
+
+
+// Q5 XX
+// document.write('Q5: To print out multiplication table.<br>')
+// var i = 1, j = 1, c = 0;
+// for(i = 1, i <= 9; i++){
+//     c == i * j};
+// for(j = 1, j <= 9; j++){
+//     c += i * j};
+// document.write(c)
+
+
+// Q5 ????
+document.write('Q5: To print out multiplication table.<br>')
+for(var i = 1, i < 10; i++){
+	for(var j = 1, j < 10; j++){
+	}
+};
+document.write( i + 'x' + j + '=' + i*j );																//為什麼跑不出來><
+
+// Q5 - 以下正解
+document.write('Q5: To print out multiplication table.<br>')
+(function nine_nine(){																					//多了function就跑出來惹
+  for(var i=1;i<10;i++){
+    for(var j=1;j<10;j++){
+      document.write(i+'x'+j+'='+i*j+"<br>");
+    }
+    
+  }
+})();
+
+
+
+//Q6																									說實在完全看不懂QQQ
+
+function fib(n){	
+  return n<2?n:fib(n-1)+fib(n-2);
+}
+
+var a =[];
+for(var i=0;i<30;i++){
+  a.push(fib(i));
+}　
+document.write(a+'<br>');
+
+
+
+
+
+</script>
